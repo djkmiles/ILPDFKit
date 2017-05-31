@@ -53,32 +53,36 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 
+// Return all forms!
+
+- (NSArray<ILPDFForm *> *)formsAll;
+
 /** Returns all forms with called by name
- 
+
  @param name The name to filter by.
  @return An array of the filtered forms.
  @discussion Generally this will return an array with a single
  object. When multiple forms have the same name, their values are kept
- the same because they are treated as logically the same entity with respect 
+ the same because they are treated as logically the same entity with respect
  to a name-value pair. For example, a choice form called
  'City' may be set as 'Lusaka' by the user on page 1, and another choice form
  also called 'City' on a summary page at the end will also be synced to have the
  value of 'Lusaka'. This is in conformity with the PDF standard. Another common relevent scenario
  involves mutually exclusive radio button/check box groups. Such groups are composed of multiple forms
- with the same name. Their common value is the exportValue of the selected button. If the value is equal 
+ with the same name. Their common value is the exportValue of the selected button. If the value is equal
  to the exportValue for such a form, it is checked. In this way, it is easy to see as well why such
- groups are mutually exclusive. Buttons with distinct names are not mutually exclusive, 
+ groups are mutually exclusive. Buttons with distinct names are not mutually exclusive,
  that is they don't form a radio button group.
  */
 - (NSArray<ILPDFForm *> *)formsWithName:(NSString *)name;
 
 
 /** Returns all forms with called by type
- 
+
  @param type The type to filter by.
  @return An array of the filtered forms.
  @discussion Here are the possible types:
- 
+
  ILPDFFormTypeNone: An unknown form type.
  ILPDFFormTypeText: A text field, either multiline or singleline.
  ILPDFFormTypeButton: A radio button, combo box buttton, or push button.
@@ -94,7 +98,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  ---------------------------------------------------------------------------------------
  */
 
-/** 
+/**
  Updates the widget views.
  */
 - (void)updateWidgetAnnotationViews:(NSMapTable *)pageViews views:(NSMutableArray *)views  pdfView:(ILPDFView *)pdfView;
@@ -107,12 +111,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** Sets a form value.
  @param val The explicit contents of the field to set.
- @param name The name of the form(s) to set the value for. 
+ @param name The name of the form(s) to set the value for.
  */
 - (void)setValue:(nullable NSString *)val forFormWithName:(NSString *)name;
 
 /**---------------------------------------------------------------------------------------
- * @name XML 
+ * @name XML
  *  ---------------------------------------------------------------------------------------
  */
 

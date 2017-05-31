@@ -74,6 +74,10 @@
 
 #pragma mark - Getting Forms
 
+- (NSArray *)formsAll {
+    return [self allForms];
+}
+
 - (NSArray *)formsWithName:(NSString *)name {
     id current = _nameTree;
     NSArray *comps = [name componentsSeparatedByString:@"."];
@@ -274,9 +278,3 @@
 }
 
 @end
-
-
-
-
-
-

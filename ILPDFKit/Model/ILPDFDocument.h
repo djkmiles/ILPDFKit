@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 /** Creates a new instance of ILPDFDocument.
- 
+
  @param data Content of the document.
  @return A new instance of ILPDFDocument initialized with data.
  */
@@ -84,14 +84,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithData:(NSData *)data NS_DESIGNATED_INITIALIZER;
 
 /** Creates a new instance of ILPDFDocument.
- 
+
  @param name Resource to load.
  @return A new instance of ILPDFDocument initialized with a PDF resource named name.
  */
 - (instancetype)initWithResource:(NSString *)name NS_DESIGNATED_INITIALIZER;
 
 /** Creates a new instance of ILPDFDocument.
- 
+
  @param path Points to PDF file to load.
  @return A new instance of ILPDFDocument initialized with a PDF located at path.
  */
@@ -102,7 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  ---------------------------------------------------------------------------------------
  */
 /** Returns the number of pages in the document.
- 
+
  @return The page count.
  */
 - (NSUInteger)numberOfPages;
@@ -116,7 +116,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)refresh;
 
-/** Flattens the interactive elements, rendering the form values directly in the PDF. 
+/** Flattens the interactive elements, rendering the form values directly in the PDF.
  Useful for saving a PDF with forms that have been filled out.
  @return The data for the static flattened PDF.
  */
@@ -137,7 +137,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIImage *)imageFromPage:(NSUInteger)page width:(NSUInteger)width;
 
-/** Sets the background color for the PDF view.
+/** Gets all values in XML format
  @return A string containing an xml representation of the forms of the document and their values. Used for submitting the form.
  */
 - (NSString *)formXML;

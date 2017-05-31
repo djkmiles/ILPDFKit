@@ -187,7 +187,7 @@ static void renderPage(NSUInteger page, CGContextRef ctx, CGPDFDocumentRef doc, 
     }
     UIGraphicsEndPDFContext();
     return pageData;
-    
+
 }
 
 - (UIImage *)imageFromPage:(NSUInteger)page width:(NSUInteger)width {
